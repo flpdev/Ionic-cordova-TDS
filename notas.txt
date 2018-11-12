@@ -1,0 +1,1 @@
+1 - install node js (sem o node nao e possível instalar o ionic, utilizado também para instalação dos plugins).
