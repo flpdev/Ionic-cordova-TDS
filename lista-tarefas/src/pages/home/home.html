@@ -1,14 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Nova Tarefa
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <ion-item>
+   <ion-input type="text" placeholder="Digite sua tarefa"></ion-input>
+ </ion-item>
+
+<div>
+  <ion-item>
+    <ion-label floating>Data</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" max="2020-12-31"></ion-datetime>
+  </ion-item>
+</div>
+
+<buton ion-button></buton>
+
 </ion-content>
