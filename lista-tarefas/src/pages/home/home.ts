@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular'; // importar ionic page para lazyload
+import { Storage } from '@ionic/storage';
 @IonicPage() // importar ionic page para lazyload
 @Component({
   selector: 'page-home',
@@ -23,12 +24,30 @@ export class HomePage {
     ["Preto","#000000"]
   ]
 
-  constructor(public navCtrl: NavController) {
+  //ARRAY DE TAREFAS EM ABERTO PARA QUE O STORAGE POSSA INCREMENTAR E ADICIONAR MAIS DE UM REGISTRO
 
+  todasTarefas: any;
+   
+  //DECLARAR A UTILIZAÇÃO DO STORAGE NO CONSTRUTOR (ISSO INDICA QUE O CONSTRUTOR HERDA DO STORAGE APOS A CHAMADA)
+  constructor(public storage: Storage /* <<< DECLARADO AQUI */, public navCtrl: NavController) {
+
+    this.storage.get('tarefasAberto').then(tarefasRetornadas =>{
+      //BUSCANDO AS TAREFAS EM ABERTO NO STORAGE E JOGANDO PARA A "VARIÁVEL" TAREFASRETORNADAS
+      this.todasTarefas = []; // SETANDO A NOSSA VARIAVEL PARA UM ARRAY VAZIO
+      //FAZENDO UM LOOP DO OBJETO RETORNADO DO STORAGE
+      for (let index = 0; index < tarefasRetornadas.length; index++) {
+        this.todasTarefas.push({
+          nome: tarefasRetornadas[index].nome,
+          data: tarefasRetornadas[index].data,
+          cor: tarefasRetornadas[index].cor
+        })   
+      }
+
+    })
   }
 
   salvarTarefa(){
-    console.log(this.tarefa)
+    this.storage.set('tarefasAberto',this.tarefa)
   }
 
 }

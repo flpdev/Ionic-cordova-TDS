@@ -1,5 +1,7 @@
 {
   "name": "lista-tarefas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
