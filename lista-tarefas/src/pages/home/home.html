@@ -8,16 +8,26 @@
 
 <ion-content padding>
  <ion-item>
-   <ion-input type="text" placeholder="Digite sua tarefa"></ion-input>
+   <ion-input type="text" [(ngModel)]="tarefa.nome" placeholder="Digite sua tarefa"></ion-input>
  </ion-item>
 
 <div>
   <ion-item>
     <ion-label floating>Data</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" max="2020-12-31"></ion-datetime>
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" max="2020-12-31" [(ngModel)]="tarefa.data"></ion-datetime>
   </ion-item>
+
+  <ion-list radio-group [(ngModel)]="tarefa.cor">
+    <ion-list-header>
+      <h2>Cor</h2>
+    </ion-list-header>
+    <ion-item *ngFor="let cor of cores" [style.borderLeft]="'10px solid' + cor[1]">
+      <ion-label>{{cor[0]}}</ion-label>
+      <ion-radio value="{{cor[1]}}"></ion-radio>
+    </ion-item>
+  </ion-list>
 </div>
 
-<button ion-button outline full>Salvar</button>
+<button ion-button outline full (click)="salvarTarefa()">Salvar</button>
 
 </ion-content>
