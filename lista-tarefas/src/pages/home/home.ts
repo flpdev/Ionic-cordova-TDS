@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular'; // importar ionic page para lazyload
+import { NavController, IonicPage, ToastController, LoadingController } from 'ionic-angular'; // importar ionic page para lazyload // importar toast controller
 import { Storage } from '@ionic/storage';
 @IonicPage() // importar ionic page para lazyload
 @Component({
@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage {
 
-  //Esse é o nossso objeto tarefa (os campos que constam no htl)
+  //Esse é o nossso objeto tarefa (os campos que constam no html)
   tarefa: any=[{
     nome:"",
     data:"",
@@ -29,7 +29,15 @@ export class HomePage {
   todasTarefas: any;
    
   //DECLARAR A UTILIZAÇÃO DO STORAGE NO CONSTRUTOR (ISSO INDICA QUE O CONSTRUTOR HERDA DO STORAGE APOS A CHAMADA)
-  constructor(public storage: Storage /* <<< DECLARADO AQUI */, public navCtrl: NavController) {
+  constructor(public storage: Storage, public navCtrl: NavController, public toast: ToastController, public loading: LoadingController) {
+
+    let load = this.loading.create({
+      content: 'Carregando tarefas...'
+    });
+
+    load.present();
+
+
 
     this.storage.get('tarefasAberto').then(tarefasRetornadas =>{
       //BUSCANDO AS TAREFAS EM ABERTO NO STORAGE E JOGANDO PARA A "VARIÁVEL" TAREFASRETORNADAS
@@ -43,11 +51,28 @@ export class HomePage {
         })   
       }
 
-    })
+    });
+    load.dismiss();
   }
 
   salvarTarefa(){
-    this.storage.set('tarefasAberto',this.tarefa)
+
+      let mensagem = this.toast.create({
+        message: 'Tarefa salva com sucesso',
+        duration: 3000,
+        position: 'bottom'
+      });
+
+    this.todasTarefas.push({
+      nome: this.tarefa.nome,
+      data: this.tarefa.data,
+      cor: this.tarefa.cor
+    }) 
+
+    this.storage.set('tarefasAberto',this.todasTarefas);
+
+    mensagem.present();
+
   }
 
 }
