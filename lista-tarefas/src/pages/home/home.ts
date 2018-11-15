@@ -72,7 +72,17 @@ export class HomePage {
     this.storage.set('tarefasAberto',this.todasTarefas);
 
     mensagem.present();
+    this.limparCampos();
+  }
 
+  openTarefas(){
+    this.navCtrl.push("TarefasPage")
+  }
+
+  limparCampos(){
+    this.tarefa.nome = '';
+    this.tarefa.data = '';
+    this.tarefa.cor = '';
   }
 
 }

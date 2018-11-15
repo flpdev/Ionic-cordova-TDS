@@ -1,3 +1,5 @@
 1 - install node js (sem o node nao e possível instalar o ionic, utilizado também para instalação dos plugins).
 https://ionicframework.com/getting-started#cli
 ionic g page "nome pagina" (cria nova pasta e toda sua estrutura).
+
+ionic g page tarefas -> cria uma nova tela para o app
