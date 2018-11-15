@@ -17,6 +17,7 @@ import { Storage } from '@ionic/storage'; // IMPORT DO STORAGE PARA ACESSAR AS I
 export class TarefasPage {
 
   tarefasAberto: any;
+  qtdTarefasAberto: number = 0;
 
   constructor(public storage: Storage, public navCtrl: NavController, public toast: ToastController, public loading: LoadingController) {
 
@@ -37,10 +38,18 @@ export class TarefasPage {
       }
 
       console.log(this.tarefasAberto);
-
+      this.qtdTarefasAberto = this.tarefasAberto.length;
     });
 
   load.dismiss();
 
 }
+
+  concluirTarefa(){
+
+  }
+
+  apagarTarefa(){
+
+  }
 }

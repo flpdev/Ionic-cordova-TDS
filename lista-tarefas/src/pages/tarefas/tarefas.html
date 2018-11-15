@@ -9,16 +9,19 @@
 <ion-content>
 
   <ion-list style="width:100%" class="no-tab-slide">
+    <ion-list-header>
+      Tarefas em Aberto - {{qtdTarefasAberto}}
+    </ion-list-header>
     <ion-item-sliding *ngFor="let tarefa of tarefasAberto" [style.borderLeft]="'10px solid' + tarefa.cor">
       <ion-item>
           {{tarefa.nome}}
           <p>{{tarefa.data | date:'dd/MM/yyyy'}}</p>
       </ion-item>
       <ion-item-options side="right">
-          <button ion-button>
+          <button ion-button (click)="concluirtarefa()">
             <ion-icon name="archive"></ion-icon>
           </button>
-          <button ion-button color="danger">
+          <button ion-button color="danger" (click)="apagarTarefa()"> 
             <ion-icon name="trash"></ion-icon>
           </button>
       </ion-item-options>
