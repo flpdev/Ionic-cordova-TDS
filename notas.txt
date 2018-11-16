@@ -3,3 +3,6 @@ https://ionicframework.com/getting-started#cli
 ionic g page "nome pagina" (cria nova pasta e toda sua estrutura).
 
 ionic g page tarefas -> cria uma nova tela para o app
+
+corrigir problema start ionic serve
+https://pt.stackoverflow.com/questions/201987/phonegap-cordova-n%C3%A3o-%C3%A9-reconhecido-como-comando-interno

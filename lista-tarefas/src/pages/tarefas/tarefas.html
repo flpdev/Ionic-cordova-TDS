@@ -33,8 +33,10 @@
       Tarefas Concluídas - {{qtdTarefasConcluidas}}
     </ion-list-header>
     <ion-item *ngFor="let tarefa of tarefasConcluidas" [style.borderLeft]="'10px solid' + tarefa.cor">
-      {{tarefa.nome}}
-      <p>{{tarefa.data | date: 'dd/MM/yyyy'}}</p>
+      <ion-item style="text-decoration: line-through; background-color: rgb(236,233,233)">
+        {{tarefa.nome}}
+        <p>{{tarefa.data | date: 'dd/MM/yyyy'}}</p>
+      </ion-item>
     </ion-item>
   </ion-list>
 
