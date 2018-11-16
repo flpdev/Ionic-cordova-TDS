@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {FormBuilder, Validators} from '@angular/forms'; // UTILIZADO PARA CRIAÇÃO DE FORMULARIOS E VALIDAÇÕES
 
 /**
  * Generated class for the LoginPage page.
@@ -16,14 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class LoginPage {
 
   imgUrl: string = 'assets/imgs/background.png';
+  loginForm: any;
 
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public form: FormBuilder) {
+    this.loginForm = form.group({
+      email:['', Validators.required],
+      senha:['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  login(){
+    alert('teste');
   }
 
 }
