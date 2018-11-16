@@ -17,7 +17,9 @@ import { Storage } from '@ionic/storage'; // IMPORT DO STORAGE PARA ACESSAR AS I
 export class TarefasPage {
 
   tarefasAberto: any;
+  tarefasConcluidas: any;
   qtdTarefasAberto: number = 0;
+  qtdTarefasConcluidas: number =0;
 
   constructor(public storage: Storage, public navCtrl: NavController, public toast: ToastController, public loading: LoadingController) {
 
@@ -41,15 +43,57 @@ export class TarefasPage {
       this.qtdTarefasAberto = this.tarefasAberto.length;
     });
 
-  load.dismiss();
+
+this.storage.get('tarefasConcluidas').then(tarefasRetornadas =>{
+        this.tarefasConcluidas = [];
+        for(let index =0;index < tarefasRetornadas.length; index++){
+        this.tarefasConcluidas.push({
+        nome:tarefasRetornadas[index].nome,
+        data:tarefasRetornadas[index].data,
+        cor:tarefasRetornadas[index].cor    
+        })
+        }
+        
+        this.qtdTarefasConcluidas = this.tarefasConcluidas.length;
+        });
+        load.dismiss();
 
 }
 
-  concluirTarefa(){
+  concluirTarefa(index, tarefa, itemSelect){
+    let load = this.loading.create({
+      content: 'Apagando a tarefa...'
+    })
+    load.present();
+
+    this.tarefasConcluidas.push({
+      nome: tarefa.nome,
+      data: tarefa.data,
+      cor: tarefa.cor
+    })
+
+    this.tarefasAberto.splice(index,1);
+
+    this.storage.set('tarefasAberto', this.tarefasAberto);
+    this.storage.set('tarefasConcluidas', this.tarefasConcluidas);
+
+    this.qtdTarefasAberto = this.tarefasAberto.length;
+    this.qtdTarefasConcluidas = this.tarefasConcluidas.length;
+
+    itemSelect.close();
+    load.dismiss();
 
   }
 
-  apagarTarefa(){
-
+  apagarTarefa(index, itemSelect){
+    let load = this.loading.create({
+      content: 'Apagando a tarefa...'
+      })
+      load.present();
+      this.tarefasAberto.splice(index,1);
+      this.storage.set('tarefasAberto',this.tarefasAberto); //Apaga do array - tabela (tarefasAberto storage)
+      this.qtdTarefasAberto = this.tarefasAberto.length;
+      itemSelect.close();
+      load.dismiss();
   }
 }
