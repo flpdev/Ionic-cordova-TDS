@@ -19,11 +19,16 @@ export class LoginPage {
   imgUrl: string = 'assets/imgs/background.png';
   loginForm: any;
 
+  erroEmail= false;
+  erroSenha= false;
+
+  msgEmail= '';
+  msgSenha= '';  
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public form: FormBuilder) {
     this.loginForm = form.group({
-      email:['', Validators.required],
-      senha:['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])]
+      email:['testeteste', Validators.required], // LOGIN PREENCHIDO SEM NECESSIDADE DE DIGITAR (DESENOLVIMENTO)
+      senha:['123123', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])]
 
     })
   }
@@ -33,7 +38,31 @@ export class LoginPage {
   }
 
   login(){
-    alert('teste');
+    let { email, senha } = this.loginForm.controls;
+
+    if(!this.loginForm.valid){
+
+      if(!email.valid){
+        this.erroEmail = true;
+        this.msgEmail = 'Email inválido';
+      }else{
+        this.erroEmail = false;
+        this.msgEmail = ''
+      }
+
+      if(!senha.valid){
+        this.erroSenha = true;
+        this.msgSenha = 'A senha precisa ter de 6 a 20 caracteres';
+      }else{
+        this.erroSenha = false;
+        this.msgSenha = '';
+      }
+
+    }else{
+      alert('Login realizado');
+      this.navCtrl.setRoot('HomePage');
+    }
+
   }
 
 }

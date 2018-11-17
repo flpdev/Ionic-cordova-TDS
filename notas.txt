@@ -6,3 +6,8 @@ ionic g page tarefas -> cria uma nova tela para o app
 
 corrigir problema start ionic serve
 https://pt.stackoverflow.com/questions/201987/phonegap-cordova-n%C3%A3o-%C3%A9-reconhecido-como-comando-interno
+
+ionic cordova platform add browser ( adiciona browser para testar a câmera do browser )
+ionic cordova run --livereload (não funcionou)
+ionic cordova build browser (utiizar para abrir o projeto diretamente da pasta PLATFORM
+ionic cordova platform add android (adiciona plataforma android para rodar do celular)

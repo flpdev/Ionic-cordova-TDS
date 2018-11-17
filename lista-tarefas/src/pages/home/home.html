@@ -17,6 +17,14 @@
     <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" max="2020-12-31" [(ngModel)]="tarefa.data"></ion-datetime>
   </ion-item>
 
+  <ion-item>
+    <button ion-button (click)="takeCamera()">
+      <ion-icon name="md-camera"></ion-icon>
+    </button>
+    <img *ngIf="!temFoto" style="width: 100px; height: 100px" src="assets/imgs/sem-foto.png">
+    <img *ngIf="temFoto" [src]="picture">
+  </ion-item>
+
   <ion-list radio-group [(ngModel)]="tarefa.cor">
     <ion-list-header>
       <h2>Cor</h2>

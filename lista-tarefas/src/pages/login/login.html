@@ -19,6 +19,7 @@
 
       </ion-input>
     </ion-item>
+    <h6 class="error" *ngIf="erroEmail">{{msgEmail}}</h6>
     <br>
     <ion-item>
         <ion-label floating>Senha</ion-label>
@@ -26,7 +27,7 @@
   
         </ion-input>
       </ion-item>
-
+    <h6 class="error" *ngIf="erroSenha">{{msgSenha}}</h6>
   <br>
       <button ion-button block round color="dark">Login</button>
   </form>
