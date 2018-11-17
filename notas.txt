@@ -11,3 +11,7 @@ ionic cordova platform add browser ( adiciona browser para testar a câmera do br
 ionic cordova run --livereload (não funcionou)
 ionic cordova build browser (utiizar para abrir o projeto diretamente da pasta PLATFORM
 ionic cordova platform add android (adiciona plataforma android para rodar do celular)
+ionic cordova run android (executar no celular como admistrador). --verbose (?)
+
+
+android-studio-ide-181.5056338-windows
