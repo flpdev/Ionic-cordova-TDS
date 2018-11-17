@@ -35,7 +35,8 @@ export class TarefasPage {
         this.tarefasAberto.push({
           nome: tarefasRetornadas[index].nome,
           data: tarefasRetornadas[index].data,
-          cor: tarefasRetornadas[index].cor
+          cor: tarefasRetornadas[index].cor,
+          foto: tarefasRetornadas[index].foto
         })   
       }
 
@@ -50,7 +51,8 @@ this.storage.get('tarefasConcluidas').then(tarefasRetornadas =>{
         this.tarefasConcluidas.push({
         nome:tarefasRetornadas[index].nome,
         data:tarefasRetornadas[index].data,
-        cor:tarefasRetornadas[index].cor    
+        cor:tarefasRetornadas[index].cor,
+        foto: tarefasRetornadas[index].foto 
         })
         }
         
@@ -69,7 +71,8 @@ this.storage.get('tarefasConcluidas').then(tarefasRetornadas =>{
     this.tarefasConcluidas.push({
       nome: tarefa.nome,
       data: tarefa.data,
-      cor: tarefa.cor
+      cor: tarefa.cor,
+      foto: tarefa.foto
     })
 
     this.tarefasAberto.splice(index,1);

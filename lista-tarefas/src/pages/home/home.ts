@@ -96,7 +96,9 @@ export class HomePage {
     this.tarefa.nome = '';
     this.tarefa.data = '';
     this.tarefa.cor = '';
+    this.picture = '';
     this.tarefa.foto = '';
+    this.temFoto = false;
   }
 
   takeCamera(){
