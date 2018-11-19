@@ -9,4 +9,57 @@
 
 <ion-content padding>
 
+
+    <ion-item>
+        <ion-label color="primary" floating>Data início</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label color="primary" floating>Data fim</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Itensidade</ion-label>
+      <ion-select>      
+        <ion-option *ngFor="let int of intensidades" value="{{int[0]}}">{{int[0]}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary">Turno</ion-label>
+        <ion-select>      
+          <ion-option  *ngFor="let tur of turno" value="{{tur[0]}}">{{tur[0]}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <br>
+    <button ion-button block>Filtrar</button>
+    <br>
+
+    <ion-list style="width:100%" class="no-tab-slide">
+        <ion-list-header>
+          <!-- Tarefas em Aberto - {{qtdTarefasAberto}} -->
+        </ion-list-header>
+        <ion-item-sliding #itemSelect *ngFor="let reg of registrosFiltrados; let i = index" [style.borderLeft]="'10px solid' + reg.intensidade">
+          <ion-item>
+              {{reg.data | date:'dd/MM/yyyy'}}
+              <p>{{ reg.turno }}</p>
+              <p>{{ reg.observacao}}</p>
+          </ion-item>
+          <!--
+          <ion-item-options side="right">
+              <button ion-button (click)="concluirTarefa(i, tarefa, itemSelect)">
+                <ion-icon name="archive"></ion-icon>
+              </button>
+              <button ion-button color="danger" (click)="apagarTarefa(i, itemSelect)"> 
+                <ion-icon name="trash"></ion-icon>
+              </button>
+          </ion-item-options>
+          -->
+        </ion-item-sliding>
+      </ion-list>
+
 </ion-content>
