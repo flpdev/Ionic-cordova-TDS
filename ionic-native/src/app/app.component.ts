@@ -23,7 +23,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon:'home' },
       { title: 'Action Sheet', component: 'ActionSheetPage', icon:'albums'}, // FAZ APARECER NO MENU DA SIDEBAR
-      {title: 'Modal', component: 'ModalPage', icon:'analytics'}
+      {title: 'Modal', component: 'ModalPage', icon:'analytics'},
+      {title: 'Barcode Scanner', component: 'BarcodePage', icon: 'barcode'},
+      {title: 'Email', component: 'EmailPage', icon: 'md-mail' }
       //{ title: 'List', component: ListPage }
     ];
 

@@ -15,3 +15,6 @@ ionic cordova run android (executar no celular como admistrador). --verbose (?)
 
 
 android-studio-ide-181.5056338-windows
+
+sempre que utilizar algum novo plugin deverá declarar no module da pagina que utiliza o mesmo o PROVIDER
+ - fazer import do mesmo
