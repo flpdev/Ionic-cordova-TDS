@@ -63,6 +63,7 @@ this.storage.get('tarefasConcluidas').then(tarefasRetornadas =>{
 }
 
   concluirTarefa(index, tarefa, itemSelect){
+    
     let load = this.loading.create({
       content: 'Apagando a tarefa...'
     })

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list radio-group [(ngModel)]="relationship">
+    <ion-list-header>Intensidade</ion-list-header>
+    <ion-item>
+      <ion-label>Fraca</ion-label>
+      <ion-radio value="fraca" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Moderada</ion-label>
+      <ion-radio value="moderada"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Forte</ion-label>
+      <ion-radio value="forte"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+      <ion-label color="primary" floating>Data</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Observação</ion-label>
+    <ion-input type="email"></ion-input>
+  </ion-item>
+</ion-content>
