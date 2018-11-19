@@ -7,27 +7,34 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list radio-group [(ngModel)]="relationship">
-    <ion-list-header>Intensidade</ion-list-header>
+    <ion-list radio-group [(ngModel)]="registro.intensidade">
+      <ion-list-header>Intensidade</ion-list-header>
+      <ion-item *ngFor="let int of intensidades" required [style.borderLeft]="'10px solid' + int[1]">
+        <ion-label>{{int[0]}}</ion-label>
+        <ion-radio value="{{int[1]}}"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-list radio-group [(ngModel)]="registro.turno">
+        <ion-list-header>Turno</ion-list-header>
+        <ion-item *ngFor="let tur of turno" required [style.borderLeft]="'10px solid' + tur[1]">
+          <ion-label>{{tur[0]}}</ion-label>
+          <ion-radio value="{{tur[0]}}"></ion-radio>
+        </ion-item>
+    </ion-list>
+
     <ion-item>
-      <ion-label>Fraca</ion-label>
-      <ion-radio value="fraca" checked></ion-radio>
+        <ion-label color="primary" floating>Data</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="registro.data"></ion-datetime>
     </ion-item>
+
     <ion-item>
-      <ion-label>Moderada</ion-label>
-      <ion-radio value="moderada"></ion-radio>
+      <ion-label color="primary" floating>Observação</ion-label>
+      <ion-input type="text" [(ngModel)]="registro.observacao" maxlength="20"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label>Forte</ion-label>
-      <ion-radio value="forte"></ion-radio>
-    </ion-item>
-  </ion-list>
-  <ion-item>
-      <ion-label color="primary" floating>Data</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Observação</ion-label>
-    <ion-input type="email"></ion-input>
-  </ion-item>
+
+    <br>
+
+    <button ion-button block (click)="salvarRegistro()">Salvar</button>
+    <button ion-button block color="danger" (click)="exibirRegistros()">Registros</button>
 </ion-content>
