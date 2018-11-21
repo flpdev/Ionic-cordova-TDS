@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let contato of contatos">
+    <ion-card-header>
+      {{contato.nome}}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{contato.telefone}}</p>
+      <p>{{contato.email}}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

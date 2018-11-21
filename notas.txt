@@ -1,5 +1,7 @@
 1 - install node js (sem o node nao e possível instalar o ionic, utilizado também para instalação dos plugins).
+
 https://ionicframework.com/getting-started#cli
+
 ionic g page "nome pagina" (cria nova pasta e toda sua estrutura).
 
 ionic g page tarefas -> cria uma nova tela para o app
@@ -9,12 +11,17 @@ https://pt.stackoverflow.com/questions/201987/phonegap-cordova-n%C3%A3o-%C3%A9-r
 
 ionic cordova platform add browser ( adiciona browser para testar a câmera do browser )
 ionic cordova run --livereload (não funcionou)
-ionic cordova build browser (utiizar para abrir o projeto diretamente da pasta PLATFORM
+ionic cordova build browser (utiizar para abrir o projeto diretamente da pasta PLATFORM)
 ionic cordova platform add android (adiciona plataforma android para rodar do celular)
 ionic cordova run android (executar no celular como admistrador). --verbose (?)
-
 
 android-studio-ide-181.5056338-windows
 
 sempre que utilizar algum novo plugin deverá declarar no module da pagina que utiliza o mesmo o PROVIDER
  - fazer import do mesmo
+
+
+LODASH.COM (biblioteca para aplicação de filtros).
+
+No arquivo package.json instalar plugins (dependencias) de outra maneira (não pelo cmd) 
+adiciona angular fire e firebase (npm -i)
