@@ -25,7 +25,7 @@ export class FirebaseProvider {
     firebase.database().ref('contatos').push({
       nome: nome,
       telefone: telefone,
-      email: telefone
+      email: email
     })
 
     

@@ -39,6 +39,7 @@ export const firebaseconfig = {
     IonicModule.forRoot(MyApp),
     // COMANDO ABAIXO INICIALIZA A CONEXÃO COM O BANCO NO FIREBASE
     AngularFireModule.initializeApp(firebaseconfig),
+    
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpModule,
