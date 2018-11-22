@@ -45,8 +45,10 @@ export class CadastroPage {
     } else {
 
       this.firebaseProvider.salvarContato(nome.value, telefone.value, email.value);
+
+      // limpa dados do formulario apos cadastramento.
+      this.cadastroForm.reset();
           
     }
   }
-
 }
