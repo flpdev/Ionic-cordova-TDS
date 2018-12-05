@@ -23,5 +23,16 @@ sempre que utilizar algum novo plugin deverá declarar no module da pagina que ut
 
 LODASH.COM (biblioteca para aplicação de filtros).
 
+https://console.developers.google.com
+
+para utilizar geologation o google fornece os seguintes APIs
+
+Distance Matrix API
+Geolocation API
+Maps JavaScript API
+
+
+
+
 No arquivo package.json instalar plugins (dependencias) de outra maneira (não pelo cmd) 
 adiciona angular fire e firebase (npm -i)

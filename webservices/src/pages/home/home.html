@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+  
+  <ion-item *ngFor='let curso of cursos'>
+     <h1>{{curso.PK0013}}</h1>
+     <h2>{{curso.AD0013TurmaNome}}</h2>
+     <p>{{curso.AD0013DataInicio}}</p>
+  </ion-item>
+  </ion-list>
+  </ion-content>
