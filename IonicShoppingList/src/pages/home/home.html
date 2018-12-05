@@ -21,5 +21,12 @@
 
 
 <ion-content padding>
- <h1>Hello World!</h1>
+<ion-list>
+  <ion-list-header>
+    ITENS
+  </ion-list-header>
+  <ion-item *ngFor="let i of shoppingList$ | async">
+    {{i.nome}}
+  </ion-item>
+</ion-list>
 </ion-content>

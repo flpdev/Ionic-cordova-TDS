@@ -1,8 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ShoppingListService } from '../../services/shopping-list/shopping-list.service';
-import { Observable } from 'rxjs';
 import { Item } from '../../models/item/item.model';
+import { Observable } from 'rxjs';
+
+// PARA RESOLVER O PROBLEMA "Object(...) is not a function" RODAR O SEGUINTE COMANDO:
+// npm i rxjs@6 rxjs-compat@6 promise-polyfill --save
+// E IMPORTAR O OBJETO ABAIXO:
+
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the HomePage page.
