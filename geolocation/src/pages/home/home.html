@@ -7,6 +7,13 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-fab right top>
+    <button ion-fab (click)="goToLocal()">
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+
   <ion-row>
     <div>
       <ion-badge class="origem">Sua localização</ion-badge>
@@ -17,4 +24,5 @@
   </ion-row>
 
   <div id="map"></div>
+
 </ion-content>

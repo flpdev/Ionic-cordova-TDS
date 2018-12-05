@@ -13,9 +13,15 @@ export class HomePage {
 
   locais = [{
     nome: 'Parque das Águas',
-    endereco: 'Av. Fernando Corrêa da Costa, 2367 - UFMT, Cuiabá - MT, 78060-708',
+    endereco: 'Av. Hermina Torquarto da Silva - Centro Político Administrativo, Cuiabá - MT, 78050-970',
     latitude: -15.5680553,//-15.6064983,
     longitude: -56.0821843//-56.0652759
+  },
+  {
+    nome: 'Havan',
+    endereco: 'Av. Historiador Rubens de Mendonça, 2555 - Bosque da Saude, Cuiabá - MT, 78050-000',
+    latitude: -15.5768033,//-15.6064983,
+    longitude: -56.0773229//-56.0652759
   }]
 
   map: any;
@@ -127,7 +133,13 @@ export class HomePage {
       marker.setMap(this.map)
 
     }
-
-
   }
+
+  goToLocal(){
+
+    this.navCtrl.push('LocalPage', {locais : this.locais})
+    
+  }
+
+
 }
