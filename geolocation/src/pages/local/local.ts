@@ -28,4 +28,8 @@ lugares:any;
     console.log('ionViewDidLoad LocalPage');
   }
 
+  openDetail(item){
+    this.navCtrl.push('DetalhesPage', {local : item})
+  }
+
 }

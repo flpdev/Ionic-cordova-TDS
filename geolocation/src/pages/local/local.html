@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-list inset>
-    <button ion-item *ngFor="let i of lugares">
+    <button ion-item *ngFor="let i of lugares" (click)="openDetail(i)">
       {{i.nome}}
     </button>
   </ion-list>
