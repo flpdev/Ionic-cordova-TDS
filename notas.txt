@@ -31,7 +31,11 @@ Distance Matrix API
 Geolocation API
 Maps JavaScript API
 
+Distance Matrix API
+Directions API
 
+//GEOCODING API
+para evitar erro de permissão negada
 
 
 No arquivo package.json instalar plugins (dependencias) de outra maneira (não pelo cmd) 
