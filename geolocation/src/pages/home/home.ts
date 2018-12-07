@@ -141,5 +141,7 @@ export class HomePage {
     
   }
 
-
+  goToRota(){
+    this.navCtrl.push('RotaPage');
+  }
 }

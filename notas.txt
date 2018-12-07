@@ -36,3 +36,5 @@ Maps JavaScript API
 
 No arquivo package.json instalar plugins (dependencias) de outra maneira (não pelo cmd) 
 adiciona angular fire e firebase (npm -i)
+
+persistencia de informações - SINGLETON
