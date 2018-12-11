@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mapa
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab right top>
+    <button ion-fab (click)="goToLocal()">
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab center bottom>
+    <button ion-fab (click)="goToRota()">
+      <ion-icon name="compass"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-row>
+    <div>
+      <ion-badge class="origem">Sua localização</ion-badge>
+    </div>
+    <div>
+      <ion-badge class="destino"> Outros locais</ion-badge>
+    </div>
+  </ion-row>
+
+  <div id="map"></div>
+
+</ion-content>

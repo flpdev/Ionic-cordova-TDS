@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Distância entre dois pontos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<div>
+  <ion-row>
+    <ion-col width-50>
+      <ion-badge class="badgeOrigem">Origem</ion-badge>
+      <ion-item>
+        <ion-input [(ngModel)]="latOri"
+                   type="number"
+                   placeholder="Latitude origem"></ion-input>
+      </ion-item>
+
+      <ion-badge class="badgeDestino">Destino</ion-badge>
+      <ion-item>
+        <ion-input [(ngModel)]="lngOri"
+                   type="number"
+                   placeholder="Longitude origem"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col width-50>
+      <ion-badge class="badgeOrigem">Origem</ion-badge>
+      <ion-item>
+        <ion-input [(ngModel)]="latDest"
+                   type="number"
+                   placeholder="Latitude destino" value="-15.6610174"></ion-input>
+      </ion-item>
+
+      <ion-badge class="badgeDestino">Destino</ion-badge>
+      <ion-item>
+        <ion-input [(ngModel)]="lngDest"
+                   type="number"
+                   placeholder="Longitude destino" value="-56.1765808"></ion-input>
+      </ion-item>
+    </ion-col>
+
+  </ion-row>
+  <button ion-button block outline (click)="calcRota(latOri, lngOri, latDest, lngDest)">Calcular Rota</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <div id="map"></div>
+</ion-content>
