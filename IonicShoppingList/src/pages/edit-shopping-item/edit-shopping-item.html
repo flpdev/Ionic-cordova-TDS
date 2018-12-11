@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{item?.nome}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- NGIFITEM ADICIONADO PARA AJSUTAR ERRO VARIÁVEL VAZIA -->
+<ion-content *ngIf="item" padding>
+
+    <ion-item>
+        <ion-label>Nome</ion-label>
+        <ion-input [(ngModel)]="item.nome"  placeholder="iPad Pro"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Quantidade</ion-label>
+        <ion-input [(ngModel)]="item.quantidade" type="number" placeholder="1"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Preço</ion-label>
+        <ion-input [(ngModel)]="item.preco" type="number" placeholder="700"></ion-input>
+      </ion-item>
+    
+      <!--{{item | json}} <<< É POSSÍVEL VISUALIZAR OS DADOS NA TELA EM TEMPO REAL UTULIZANDO ESTE COMANDO--> 
+    
+      <button ion-button block clear (click)="saveItem(item)">Gravar</button>
+      <button ion-button block clear color="danger" (click)="removeItem(item)">Apagar</button>
+
+</ion-content>
